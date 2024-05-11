@@ -1,0 +1,15 @@
+
+// checkbox page register.php
+
+function myFunction(){
+    // let confirmPassword = document.getElementById("confirmPassword");
+    // let password = document.getElementById("password");
+
+    if( password.type === "password"){
+        password.type = "text";
+        confirmPassword.type = "text";
+    }else{
+        password.type  = "password";
+        confirmPassword.type = "password";
+    }
+}

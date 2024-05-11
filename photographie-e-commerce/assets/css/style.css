@@ -1,0 +1,332 @@
+:root{
+    --bleu-turquoise: #009688;
+    --or: #C4BC5A;
+    --black: #000;
+    --grey: #B9B5B5;
+}
+
+header{
+    background-image: url("../img/bride.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 150vh;
+    margin-top: -19%;
+}
+.navbar{
+    background-color: rgba(245, 245, 220, 0.637);
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+    margin-right: 40px;
+    width: 80%;
+    margin-top: 0;
+    height: 50px;
+}
+nav li{
+    list-style: none;
+}
+
+li a{
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 5px;
+}
+li a:hover{
+    background-color: #009687b9;
+    padding: 7px;
+    border-radius: 30px;
+    color: white;
+    text-align: center;
+}
+li span{
+    font-size: 30px;
+    color: var(--bleu-turquoise);
+    font-family: "Clicker Script";
+    font-weight: bolder;
+}
+nav img{
+    width: 8%;
+    margin-left: 30px;
+}
+i{
+    font-size: 50px;
+    margin: 0;
+}
+
+li h5{
+    font-weight: bolder;
+    font-size: 20px;
+}
+li h5:hover{
+    color: #fff;
+    padding: 2px;
+}
+
+.card{
+    background-color: #e2dfc3be;
+}
+.menuL{
+    font-size: 10px;
+    text-decoration: underline;
+    text-decoration-color: var(--or);
+}
+.btn{
+    background-color: var(--or);
+    color: black;
+}
+.btn:hover{
+    background-color: var(--bleu-turquoise);
+}
+/* 
+.title-img{
+    position: relative;
+} */
+
+.pinkImg img{
+    width: 100%;
+}
+.pinkImg{ 
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    flex-direction: row-reverse;
+    top: 50%;
+    left: 70%;
+    height: 50%;
+}
+
+/* h1{
+    top: 60%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 5vw;
+} */
+/* -----------------------------nav headerwithout bg img------------------------------------------------------------- */
+.dropdown-menu{
+    background-color: #e2dfc3be;
+    padding: 7px;
+    font-size: 10px;
+    text-decoration: underline;
+    text-decoration-color: var(--or);
+}
+.dropdown i:hover{
+    background-color: #009687b9;
+    padding: 7px;
+    border-radius: 30%;
+    color: #fff;
+}
+.dropdown i{
+    color: #000;
+    font-size: 30px;
+}
+/* -------------------------------Main-------------------------------------------------- */
+.img1 img{
+    width: 80%;
+    border-radius: 5%;
+}
+.img1{
+    padding: 3%;
+}
+.img1Text{
+    padding-top: 12%;
+    padding-right: 5%;
+}
+.img1Text p{
+    text-align: justify;
+}
+.img2 img{
+    width: 100%;
+    padding: 5%;
+    padding-top: 10px;
+    border-radius: 5%;
+}
+
+.img2Text{
+    text-align: justify;
+    margin-top: 0;
+    padding: 5%;
+}
+
+article img{
+    width: 100%;
+    border-radius: 5%;
+}
+
+article p{
+    text-align: justify;
+    align-items: center;
+} 
+article h3{
+    align-items: center;
+    padding: 5%, 0%;
+}
+article button{
+    text-align: center;
+    margin: auto;
+
+}
+.petit-section{
+    border-radius: 22px;
+    background-color: var(--grey);
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+}
+.red-flower1 img{
+    width: 40%;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    border-radius: 4px;
+}
+.red-flower1{
+    display: flex;
+    justify-content: center;
+}
+.red-flower2 img{
+    width: 40%;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    border-radius: 4px;
+}
+.red-flower2{
+    display: flex;
+    justify-content: center;
+}
+.textPromo h3{
+    font-weight: bolder;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+}
+.lastPara{
+    text-align: justify;
+    padding: 5%;
+}
+.lastPara h3{
+    margin-bottom: 10px;
+}
+
+/* .trinquons{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+
+.trinquons p{
+    border: 1px solid var(--bleu-turquoise);
+    border-radius: 45px;
+    padding: 20px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+} */
+/* -------------------------------Footer-------------------------------------------------- */
+.navFoot{
+    background-color: var(--grey);
+}
+.navFoot a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold; 
+}
+
+.navFoot a:hover{
+    background-color: var(--bleu-turquoise);
+    border-radius: 10px;
+    color: #fff;
+}
+
+.navFoot i:hover{
+    background-color: var(--bleu-turquoise);
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+
+.footer1 a:hover{
+    background-color: var(--bleu-turquoise);
+}
+
+.vertical{
+    border-left: 4px solid var(--or);
+}
+
+/* -------------------------Page Galerie.php----------------------------------------------- */
+#galerieB{
+    background-color: var(--black);
+}
+
+#galerieB .navbar{
+    background-color: rgba(255, 255, 255, 0.877);
+}
+.mainGalerie{
+    margin-top: 5%;
+}
+h1{
+    margin-top: 10%;
+    text-align: center;
+    color: var(--or);
+    font-family: "Clicker Script";
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size: 45px;
+}
+
+.mainGalerie p{
+    font-weight: bolder;
+    color: var(--or);
+}
+
+.mainGalerie .galerieImg1{
+    width: 85%;
+}
+.mainGalerie .galerieImg2{
+    width: 100%;
+}
+.mainGalerie .galerieImg3{
+    width: 100%;
+}
+.mainGalerie .galerieImg4{
+    width: 100%;
+}
+.mainGalerie .galerieImg5{
+    width: 85%;
+}
+.mainGalerie .galerieImg6{
+    width: 100%;
+}
+.mainGalerie .galerieImg7{
+    width: 100%;
+}
+.mainGalerie .galerieImg8{
+    width: 100%;
+}
+.mainGalerie .galerieImg9{
+    width: 85%;
+}
+.mainGalerie .galerieImg10{
+    width: 100%;
+}
+.mainGalerie .galerieImg11{
+    width: 100%;
+}
+.mainGalerie .galerieImg12{
+    width: 100%;
+}
+.mainGalerie .galerieImg13{
+    width: 85%;
+}
+.mainGalerie .galerieImg14{
+    width: 100%;
+}
