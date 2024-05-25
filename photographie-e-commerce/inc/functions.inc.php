@@ -96,7 +96,7 @@ function createTableCategories()
 
 }
 
-createTableCategories();
+// createTableCategories();
 
 
   ////////////////// Fonction pour vérifier si le client est existe dans la BDD ///////////////////////////////
@@ -116,6 +116,18 @@ createTableCategories();
     return $resultat;
 }
 
+
+
+//////////////////////Fonction pour vérifier si un email existe dand la BDD/////////////
+
+function checkEmailClient(string $email){
+    $pdo = connexionBdd();
+    $sql = "SELECT * FROM clients WHERE email = :email";
+    $request = $pdo->prepare($sql);
+    $request->execute(array(
+        ':email' => $email
+    ));
+}
     ////////////////// Fonction pour vérifier si un telephone existe dans la BDD ///////////////////////////////
 
     function checkTelephoneClient(string $telephone) {

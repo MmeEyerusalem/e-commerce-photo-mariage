@@ -16,18 +16,24 @@ if(!isset($_SESSION['user'])) {
 
 
 $title = "dashboard";
-require_once "../inc/header.inc.php";
+require_once "../inc/headerwithout.inc.php";
 ?>
 
-<main class= "mt-5">
+
+
+
+
+
+
+<main class= "mt-5 p-5">
 
         <?php
             if (isset($_GET['dashboard_php'])):
         ?>
 
             <div class="w-50 m-auto">
-                <h2>Bonjour <?= $_SESSION['user']['nom'] ?> </h2>
-                <p class="text-dark">Bienvenue sur le backoffice</p>
+                <h2 class="text-white">Bonjour <?= $_SESSION['user']['nom'] ?> </h2>
+                <p class="text-white">Bienvenue! Page admin!</p>
             </div>
 
         <?php endif; ?>
@@ -39,9 +45,9 @@ require_once "../inc/header.inc.php";
                 </div>
                     <div class="col-3 list-group d-flex justify-content-end">
                     <a class="list-group-item list-group-item-action disabled" aria-disabled="true">Backoffice</a>
-                    <a href="?livres_php" class="list-group-item list-group-item-action">Les livres</a>
+                    <a href="?photos_php" class="list-group-item list-group-item-action">Photos</a>
                     <a href="?categories_php" class="list-group-item list-group-item-action">Catagories</a>
-                    <a href="?users_php" class="list-group-item list-group-item-action">Users</a>
+                    <a href="?clients_php" class="list-group-item list-group-item-action">Clients</a>
                     
                 </div>
             </div>
@@ -50,14 +56,14 @@ require_once "../inc/header.inc.php";
         <div class="col-sm-12">
         <?php
             if (!empty($_GET)) { 
-                if (isset($_GET['livres_php'])) {
-                    require_once "livres.php";
+                if (isset($_GET['photos_php'])) {
+                    require_once "photos.php";
 
                 } else if (isset($_GET['categories_php'])) {
                     require_once "categories.php";
 
-                } else if (isset($_GET['users_php'])) {
-                    require_once "users.php";
+                } else if (isset($_GET['clients_php'])) {
+                    require_once "clients.php";
 
                 } else {
                     require_once "dashboard.php";

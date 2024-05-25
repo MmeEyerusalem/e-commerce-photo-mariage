@@ -1,9 +1,5 @@
 
-<?php
-require_once "inc/functions.inc.php";
 
-
-?>
 
 <footer>
         <nav class="nav navFoot pt-5  pb-3">

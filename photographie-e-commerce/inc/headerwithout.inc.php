@@ -29,10 +29,10 @@ logOut();
 <body id="galerieB">   
         <nav class="navbar fixed-top">
 
-            <img src="./assets/img/logo-blue.png" alt="logo">
+            <img src="<?=RACINE_SITE ?>./assets/img/Transparent-Photography-Logo-copy.png" alt="logo">
                 <ul>
                     <li>
-                        <a href="index.php"><span>E.A </span> PHOTOGRAPHIE</a>
+                        <a href="<?=RACINE_SITE ?>index.php"><span>EYE </span> PHOTOGRAPHIE</a>
                     </li>
 
                 <div class="dropdown  ">
@@ -68,12 +68,12 @@ logOut();
                         <div style="min-height: 120px;">
                             <div class="collapse collapse-horizontal" id="collapseWidthExample">
                                 <div class="card card-body" style="width: 250px;">
-                                    <a href="index.php" class="menuL fs-6 text-center">Accueil</a>
-                                    <a href="#" class="menuL fs-6 ">Photographie de Mariage</a>
-                                    <a href="#" class="menuL fs-6 ">Photographie d'occasion</a>
-                                    <a href="#" class="menuL fs-6 text-center">Partager ma passion</a>
+                                    <a href="<?=RACINE_SITE ?>index.php" class="menuL fs-6 text-center">Accueil</a>
+                                    <a href="<?=RACINE_SITE ?>galerie.php" class="menuL fs-6 ">Photographie de Mariage</a>
+                                    <a href="<?=RACINE_SITE ?>" class="menuL fs-6 ">Photographie d'occasion</a>
+                                    <a href="<?=RACINE_SITE ?>projetperso.php" class="menuL fs-6 text-center">Partager ma passion</a>
                                     <a href="<?=RACINE_SITE ?>galerie.php" class="menuL fs-6 text-center">Galerie</a>
-                                    <a href="#" class="menuL fs-6 text-center">Contact</a>
+                                    <a href="<?=RACINE_SITE ?>contact.php" class="menuL fs-6 text-center">Contact</a>
                                 </div>
                             </div>
                         </div>

@@ -1,12 +1,13 @@
 <?php
 require_once "inc/functions.inc.php";
+session_start();
 
 
 $message = "";
 
 
-if ( !empty($_POST)) {
-    debug($_POST);
+if(!empty($_POST)) {
+    var_dump($_POST);
 
     $verif = true;
 
@@ -18,36 +19,30 @@ if ( !empty($_POST)) {
         }
     }
 
-    if (!$verif) {
+    if(!$verif) {
         debug($_POST);
 
 
         $message = "Tous les champs sont obligatoires!";
 
-    }else {
+    }else{
 
-        debug($_POST);
-
+          debug($_POST);
+        
         $email = isset($_POST['email']) ? $_POST['email'] : null;
         $password = isset($_POST['password']) ? $_POST['password'] : null;
 
+        debug("Email: $email, Password: $password");  // j'ai ajouter debug car je face de problem de connecxion, il recuper le email et de passord mais il dérige pas sur la page admin ni user
+  
         $client = checkClient($email, $password);
-        if ($client) {
 
-            if(password_verify($password, $client['password'])){
+        debug("Client data:" . print_r($client, true)); //debug de problem connexion
+        
 
-                $_SESSION['user'] = $client;
-                
-                header("location:".RACINE_SITE."profil.php");
-
-            }else {
-                $message = "Les identifiants sont incorrectes";
-            }
-        }else {
-            $message = "Les identifiants sont incorrectes";
-        }
-      }
+  }
 }
+
+
 
 
 
@@ -64,6 +59,9 @@ require_once "inc/headerwithout.inc.php";
       <h3 class=" text-white p-3">Prêt à découvrir vos photos ?</h3>
         
     <form action="" method="post" class="w-50 mx-auto p-3 text-white rounded-5 border p-5 col-sm-12 col-md-8">
+      <?php
+        echo $message;
+      ?>  
       <div class="p-3 col-sm-12">
         <label for="email" class="form-label">Email</label>
         <input type="text" class="form-control rounded-pill input-custom" id="email" name="email">

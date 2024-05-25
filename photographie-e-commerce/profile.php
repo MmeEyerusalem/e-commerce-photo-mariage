@@ -14,12 +14,12 @@ if (empty($_SESSION['user'])) {
 }
 
 $title = "Profil";
-require_once "inc/header.inc.php";
+require_once "inc/headerwithout.inc.php";
 ?>
 
 
 <main>
-    <h2 class="text-center">Bonjour <?=$_SESSION['user']['firstName']?></h2>
+    <h2 class="text-center">Bonjour <?=$_SESSION['user']['nom']?></h2>
 
 </main>
 
