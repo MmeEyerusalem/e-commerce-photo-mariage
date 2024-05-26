@@ -15,6 +15,9 @@ logOut();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Imperial+Script&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Marck+Script&family=Meow+Script&family=Nova+Script&family=Rouge+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Imperial+Script&family=Marck+Script&family=Meow+Script&family=Nova+Script&family=Rouge+Script&display=swap"
         rel="stylesheet">
@@ -70,9 +73,9 @@ logOut();
                                 <div class="card card-body" style="width: 250px;">
                                     <a href="<?=RACINE_SITE ?>index.php" class="menuL fs-6 text-center">Accueil</a>
                                     <a href="<?=RACINE_SITE ?>galerie.php" class="menuL fs-6 ">Photographie de Mariage</a>
-                                    <a href="<?=RACINE_SITE ?>" class="menuL fs-6 ">Photographie d'occasion</a>
+                                    <a href="<?=RACINE_SITE ?>occasions.php" class="menuL fs-6 text-center">Autres occasions</a>
                                     <a href="<?=RACINE_SITE ?>projetperso.php" class="menuL fs-6 text-center">Partager ma passion</a>
-                                    <a href="<?=RACINE_SITE ?>galerie.php" class="menuL fs-6 text-center">Galerie</a>
+                                    <a href="<?=RACINE_SITE ?>aproposdemoi.php" class="menuL fs-6 text-center">A propos de moi</a>
                                     <a href="<?=RACINE_SITE ?>contact.php" class="menuL fs-6 text-center">Contact</a>
                                 </div>
                             </div>

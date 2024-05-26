@@ -93,53 +93,53 @@ require_once "inc/headerwithout.inc.php";
 
   <form class="text-dark mt-5" name="contact_form" method="post" action="">
     <table width="500">
-    <tr>
-     <td class="p-3">
-      <label for="nom">Nom</label>
-     </td>
-     <td class="p-3">
-      <input  type="text" name="nom" maxlength="50" size="30" value="<?php if (isset($_POST['nom'])) echo htmlspecialchars($_POST['nom']);?>">
-     </td>
-    </tr>
-    <tr>
-     <td class="p-3">
-      <label for="prenom">Prénom</label>
-     </td>
-     <td class="p-3">
-      <input  type="text" name="prenom" maxlength="50" size="30" value="<?php if(isset($_POST['prenom'])) echo htmlspecialchars($_POST['prenom']);?>">
-     </td>
-    </tr>
-    <tr>
-     <td class="p-3">
-      <label for="email">Email Addresse</label>
-     </td>
-     <td class="p-3">
-      <input  type="text" name="email" maxlength="80" size="30" value="<?php if (isset($_POST['email'])) echo htmlspecialchars($_POST['email']);?>">
-     </td>
-    </tr>
-    <tr>
-     <td class="p-3">
-      <label for="telephone">Téléphone</label>
-     </td>
-     <td class="p-3">
-      <input  type="text" name="telephone" maxlength="30" size="30" value="<?php if (isset($_POST['telephone'])) echo htmlspecialchars($_POST['telephone']);?>">
-     </td>
-    </tr>
-    <tr>
-     <td class="p-3">
-      <label for="commentaire">Votre message</label>
-     </td>
-     <td class="p-3">
-      <textarea  name="commentaire" cols="28" rows="10"><?php if (isset($_POST['commentaire'])) echo htmlspecialchars($_POST['commentaire']);?></textarea>
-     </td>
-    </tr>
-    <tr>
-     <td colspan="2" style="text-align:center">
-     <button type="submit" value=" Envoyer " class="btn btn-outline-dark rounded-start ms-4 bouton mb-4">Envoyer</button>
-     </td>
-    </tr>
+        <tr>
+        <td class="p-3">
+          <label for="nom">Nom</label>
+        </td>
+        <td class="p-3">
+          <input  type="text" name="nom" maxlength="50" size="30" value="<?php if (isset($_POST['nom'])) echo htmlspecialchars($_POST['nom']);?>">
+        </td>
+        </tr>
+        <tr>
+        <td class="p-3">
+          <label for="prenom">Prénom</label>
+        </td>
+        <td class="p-3">
+          <input  type="text" name="prenom" maxlength="50" size="30" value="<?php if(isset($_POST['prenom'])) echo htmlspecialchars($_POST['prenom']);?>">
+        </td>
+        </tr>
+        <tr>
+        <td class="p-3">
+          <label for="email">Email Addresse</label>
+        </td>
+        <td class="p-3">
+          <input  type="text" name="email" maxlength="80" size="30" value="<?php if (isset($_POST['email'])) echo htmlspecialchars($_POST['email']);?>">
+        </td>
+        </tr>
+        <tr>
+        <td class="p-3">
+          <label for="telephone">Téléphone</label>
+        </td>
+        <td class="p-3">
+          <input  type="text" name="telephone" maxlength="30" size="30" value="<?php if (isset($_POST['telephone'])) echo htmlspecialchars($_POST['telephone']);?>">
+        </td>
+        </tr>
+        <tr>
+        <td class="p-3">
+          <label for="commentaire">Votre message</label>
+        </td>
+        <td class="p-3">
+          <textarea  name="commentaire" cols="28" rows="10"><?php if (isset($_POST['commentaire'])) echo htmlspecialchars($_POST['commentaire']);?></textarea>
+        </td>
+        </tr>
+        <tr>
+        <td colspan="2" style="text-align:center">
+        <button type="submit" value=" Envoyer " class="btn btn-outline-dark rounded-start ms-4 bouton mb-4">Envoyer</button>
+        </td>
+        </tr>
     </table>
-    </form>
+  </form>
 
     <div class="px-5">
         <img class="rounded-pill mt-5" src="assets/img/wedding-22.jpg" alt="" width="50%" hieght="100%">

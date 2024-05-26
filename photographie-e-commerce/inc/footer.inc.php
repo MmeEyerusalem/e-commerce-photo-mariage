@@ -7,7 +7,7 @@
                 <a class="nav-link text-center" href="#">  Contact</a>
                 <a class="nav-link text-center" href="#">Condition general</a>
                 <a class="nav-link text-center" href="#">Droit d'auteur</a>
-                <p class="pt-3 text-center">&copy; E.A photographie 2024</p>
+                <p class="pt-3 text-center">&copy; EYE photographie 2024</p>
             </div>
 
             <div class="col-6 border-start footer2 text-center">
