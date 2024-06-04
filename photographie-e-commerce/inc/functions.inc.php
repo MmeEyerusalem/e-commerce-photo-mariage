@@ -1,6 +1,4 @@
-
 <?php
-
 session_start();
 
 define("RACINE_SITE", "/eyerusalem-projet-e-commerce/photographie-e-commerce/");
@@ -79,6 +77,26 @@ function inscrireClients(
         ));
 }
 
+////////////////////////////////////Fonction for logOut  /////////////////////////////////////////////////////
+function logOut()
+{
+
+    if (isset($_GET['stop']) && !empty($_GET['stop']) && $_GET['stop'] == 'deconnexion') {
+        unset($_SESSION['user']);
+        header("location:" . RACINE_SITE . "index.php");
+    }
+}   
+
+//////////////////////////Fonction pour récupérer tout les utilisateurs////////////////////////////////////
+function allClients(): array
+{
+    $pdo = connexionBdd();
+    $sql = "SELECT* FROM clients";
+    $request = $pdo->query($sql);
+    $result = $request->fetchAll();
+    return $result;
+}
+
 ////////////////////////////////Function for categorie create table /////////////////////////////////////////////////:
 
 function createTableCategories()
@@ -88,9 +106,7 @@ function createTableCategories()
 
     $sql = "CREATE TABLE IF NOT EXISTS categories (
             id_category INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-            name VARCHAR(50) NOT NULL,
-            description TEXT NULL
-        )";
+            name VARCHAR(50) NOT NULL)";
 
     $request = $pdo->exec($sql);
 
@@ -101,22 +117,20 @@ function createTableCategories()
 
   ////////////////// Fonction pour vérifier si le client est existe dans la BDD ///////////////////////////////
 
-  function checkClient(string $email, string $password) :mixed 
-  {
-    $pdo = connexionBdd();
-    $sql = "SELECT * FROM clients WHERE email = :email AND password = :password";
-    $request = $pdo->prepare($sql);
-    $request->execute( array(
-        ':email' => $email,
-        ':password' => $password
+//   function checkClient(string $email, string $password) :mixed 
+//   {
+//     $pdo = connexionBdd();
+//     $sql = "SELECT * FROM clients WHERE email = :email AND password = :password";
+//     $request = $pdo->prepare($sql);
+//     $request->execute( array(
+//         ':email' => $email,
+//         ':password' => $password
 
-    ));
+//     ));
 
-    $resultat = $request->fetch();
-    return $resultat;
-}
-
-
+//     $resultat = $request->fetch();
+//     return $resultat;
+// }
 
 //////////////////////Fonction pour vérifier si un email existe dand la BDD/////////////
 
@@ -127,6 +141,9 @@ function checkEmailClient(string $email){
     $request->execute(array(
         ':email' => $email
     ));
+
+    $resultat = $request->fetch();
+    return $resultat;
 }
     ////////////////// Fonction pour vérifier si un telephone existe dans la BDD ///////////////////////////////
 
@@ -143,15 +160,53 @@ function checkEmailClient(string $email){
         return $resultat;
     }
 
+/////////////////Fonction  pour ajoute photo//////////////////////////////////////
+function addPhoto(int $galerie_id,  string $photo, string $photo_name, string $upload_date ): void{
 
-////////////////////////////////////Fonction for logOut  /////////////////////////////////////////////////////
-function logOut()
-{
+    $pdo = connexionBdd();
+    $sql = "INSERT INTO photos (galerie_id, photo, photo_name, upload_date)";
+    $request = $pdo->prepare($sql);
+    $request->execute(
+         array(
+            ':galerie_id'=> $galerie_id,
+            ':photo'=> $photo,
+            ':photo_name'=> $photo_name,
+            ':upload_date'=> $upload_date
+         )
+         );
+}
 
-    if (isset($_GET['stop']) && !empty($_GET['stop']) && $_GET['stop'] == 'deconnexion') {
-        unset($_SESSION['user']);
-        header("location:" . RACINE_SITE . "index.php");
-    }
-}   
+
+/////////////////Fonction  pour update photo//////////////////////////////////////
+
+function updatePhoto(int $id, int $galerie_id,  string $photo, string $photo_name, string $upload_date ): void{
+    $pdo = connexionBdd();
+    $sql = "UPDATE photos SET 
+        id_photo = :id, 
+        galerie_id  = :galerie_id,
+        photo = :photo,
+        photo_name = :photo_name,
+        upload_date = :upload_date
+        WHERE id_photo = :id";
+        $request =$pdo->prepare($sql);
+        $request->execute(
+            array(
+                'id' => $id,
+                'galerie_id' => $galerie_id,
+                'photo' => $photo,
+                'photo_name' => $photo_name,
+                'upload_date' => $upload_date,
+            )
+            );
+}
+
+/////////////////Fonction  pour delete photo//////////////////////////////////////
+
+function deletePhoto(int $id):void {
+    $pdo = connexionBdd();
+    $sql = "DELETE FROM photos WJERE id_photo = :id";
+    $request = $pdo->prepare($sql);
+    $request->execute([':id' => $id]);
+}
 
 ?>

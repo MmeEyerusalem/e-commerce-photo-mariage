@@ -84,7 +84,6 @@
         </div>
     </section>
 
-    
     <section class=" container ">
         <div class="row mainPerso">
             <div class="col-6" data-aos="zoom-in-left">

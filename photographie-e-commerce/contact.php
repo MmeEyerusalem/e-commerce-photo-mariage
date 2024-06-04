@@ -152,7 +152,6 @@ require_once "inc/headerwithout.inc.php";
 
 
 
-
 <?php
   require_once "inc/footer.inc.php";
 ?>

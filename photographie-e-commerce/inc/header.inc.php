@@ -30,20 +30,17 @@ require_once "functions.inc.php";
 <body>
 
     <header>
-        <nav class="navbar fixed-top">
+        <nav class="navbar navbar-expand-lg fixed-top">
 
-            <img src="./assets/img/Transparent-Photography-Logo-copy.png" alt="logo">
+            <img src="./assets/img/Transparent-Photography-Logo-copy.png" class="logoImg" alt="logo">
                 <ul>
-                    <li>
+                    <li class="nomEnterprise">
                         <a href="index.php"><span>EYE </span> PHOTOGRAPHIE</a>
                     </li>
-                    
                     <li>
-                        <!-- <a href="#" class="btn"  data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample"> -->
                         <a href="#" class="btn"  data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false">
                         <h5 class=" mb-0">Menu</h5>
                         </a>
-
                         <div style="min-height: 120px;">
                             <div class="collapse collapse-horizontal" id="collapseWidthExample">
                                 <div class="card card-body" style="width: 250px;">
@@ -58,9 +55,7 @@ require_once "functions.inc.php";
                         </div>
                     </li>
                 </ul>
-
         </nav>
-
         <div class="titreIndex"><h1 class="texte-dark">Le Jour Important...</h1></div>
         <div class="pinkImg ">
             <img src="./assets/img/pink-flowers.png" alt="pinkFlower">

@@ -1,56 +1,44 @@
 <?php
 require_once "inc/functions.inc.php";
-session_start();
+ob_start();
 
 
 $message = "";
 
+// login.php
 
-if(!empty($_POST)) {
-    var_dump($_POST);
+if (isset($_POST['email']) && isset($_POST['password'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-    $verif = true;
+    // Connectez-vous à la base de données
+    $pdo = connexionBdd();
 
-    foreach ($_POST as $value) {
+    // Préparez le SQL
+    $stmt = $pdo->prepare("SELECT * FROM clients WHERE email = :email");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
 
-        if (empty($value) ) {
-
-            $verif = false;
+    // Vérifier si l'utilisateur existe
+    if ($stmt->rowCount() > 0) {
+        $user = $stmt->fetch();
+        if (password_verify($password, $user['password'])) {
+            // stockez l'ID utilisateur dans la session
+            $_SESSION['user_id'] = $user['id_client'];
+            header('Location: galerieprivate.php');
+            exit;
+        } else {
+            $message = 'Invalid password';
         }
+    } else {
+        $message = 'User not found';
     }
-
-    if(!$verif) {
-        debug($_POST);
-
-
-        $message = "Tous les champs sont obligatoires!";
-
-    }else{
-
-          debug($_POST);
-        
-        $email = isset($_POST['email']) ? $_POST['email'] : null;
-        $password = isset($_POST['password']) ? $_POST['password'] : null;
-
-        debug("Email: $email, Password: $password");  // j'ai ajouter debug car je face de problem de connecxion, il recuper le email et de passord mais il dérige pas sur la page admin ni user
-  
-        $client = checkClient($email, $password);
-
-        debug("Client data:" . print_r($client, true)); //debug de problem connexion
-        
-
-  }
 }
-
-
-
-
-
 
 $title = "authentification";
 
 require_once "inc/headerwithout.inc.php";
-
+ob_end_flush();
 ?>
 
 
@@ -60,7 +48,10 @@ require_once "inc/headerwithout.inc.php";
         
     <form action="" method="post" class="w-50 mx-auto p-3 text-white rounded-5 border p-5 col-sm-12 col-md-8">
       <?php
-        echo $message;
+      debug($_POST);
+      // debug($client);
+      // debug($_SESSION['clients']);
+      echo $message;
       ?>  
       <div class="p-3 col-sm-12">
         <label for="email" class="form-label">Email</label>
@@ -78,11 +69,6 @@ require_once "inc/headerwithout.inc.php";
 
     </form>
   </section>
-
-
-
-
-
 
 
 

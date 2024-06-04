@@ -87,11 +87,6 @@ li h5:hover{
 .btn:hover{
     background-color: var(--bleu-turquoise);
 }
-/* 
-.title-img{
-    position: relative;
-} */
-
 .pinkImg img{
     width: 100%;
 }
@@ -131,7 +126,7 @@ li h5:hover{
     color: #000;
     font-size: 30px;
 }
-/* -------------------------------Main-------------------------------------------------- */
+/* -------------------------------page index Main-------------------------------------------------- */
 p{
     font-family: var(--font-family-parag);
 }
@@ -226,7 +221,7 @@ article button{
 .lastPara h3{
     margin-bottom: 8px;
 }
-/* -------------------------------Footer-------------------------------------------------- */
+/* ------------------------------page index Footer-------------------------------------------------- */
 .navFoot{
     background-color: var(--grey);
 }
@@ -248,6 +243,14 @@ article button{
     border-radius: 10px;
     
 }
+.teleIcon {
+    font-size: small;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    color: #000;
+    font-weight: bolder;
+}
 
 .footer1 a:hover{
     background-color: var(--bleu-turquoise);
@@ -256,6 +259,91 @@ article button{
 .vertical{
     border-left: 4px solid var(--or);
 }
+
+/* ------------------------------media querie page index ----------------------------------- */
+@media screen and (min-width:768px) and (max-width: 992px) { 
+
+    .titreIndex h1{
+        font-size: 350%;
+        margin-top: 43%;
+        transform: translate(80%, -84%);
+         /* Adjust font size */
+         /* Adjust margin top */
+         /* Adjust transform */
+    }    
+
+ }
+
+ @media screen and (min-width:536px) and (max-width:767px) {
+    .titreIndex h1{
+        font-size: 300%;
+        /* margin-top: 45%; */
+        transform: translate(75%, -82%);
+    }
+    .pinkImg{
+        display: flex;
+        justify-content: end;
+        flex-direction: row-reverse;
+        top: 50%;
+        left: 40%;
+        height: 50%;
+    }
+    .img1{
+        display: flex;
+        justify-content: center;
+    }
+    .petit-section{
+        border-radius: 22px;
+        background-color: var(--grey);
+        width: 50%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+    .textPromo h3{
+        display: flex;
+        justify-content: center;
+    }
+    .titleG{
+        margin-top: 35%;
+    }
+ }
+ @media screen and  (max-width:535px) {
+    .titreIndex h1{
+        font-size: 200%;
+        margin-top: 50%;
+        transform: translate(70%, -80%);
+    }
+    .pinkImg{
+        display: flex;
+        justify-content: end;
+        flex-direction: row-reverse;
+        top: 50%;
+        left: 40%;
+        height: 50%;
+    }
+    .img1{
+        display: flex;
+        justify-content: center;
+    }
+    .petit-section{
+        border-radius: 22px;
+        background-color: var(--grey);
+        width: 50%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+    .textPromo h3{
+        display: flex;
+        justify-content: center;
+    }
+    .titleG{
+        margin-top: 30%;
+    }
+ }
 
 /* -------------------------Page Galerie.php----------------------------------------------- */
 #galerieB{

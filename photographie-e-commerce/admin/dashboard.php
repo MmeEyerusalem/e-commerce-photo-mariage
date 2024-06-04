@@ -1,5 +1,4 @@
 <?php
-
 require_once "../inc/functions.inc.php";
 
 if(!isset($_SESSION['user'])) {
@@ -25,26 +24,23 @@ require_once "../inc/headerwithout.inc.php";
 
 
 
-<main class= "mt-5 p-5">
+<main class= "mt-0 p-5 bg-secondary">
 
         <?php
             if (isset($_GET['dashboard_php'])):
         ?>
 
-            <div class="w-50 m-auto">
-                <h2 class="text-white">Bonjour <?= $_SESSION['user']['nom'] ?> </h2>
+            <div class="w-50 p-5 m-auto">
+                <h2 class="text-white mt-5">Bonjour <?= $_SESSION['user']['nom'] ?> </h2>
                 <p class="text-white">Bienvenue! Page admin!</p>
             </div>
 
         <?php endif; ?>
 
-        <article class= "container mt-0">
+        <article class= "container mt-2">
             <div class="row ">
-                <div class= "col-3 boyReading">
-                    <img src="../assets/img/boy-reading-studying-animation-3.gif" alt="">
-                </div>
-                    <div class="col-3 list-group d-flex justify-content-end">
-                    <a class="list-group-item list-group-item-action disabled" aria-disabled="true">Backoffice</a>
+                <div class="col-3 mt-5 pt-3 list-group d-flex justify-content-end">
+                    <a href="?dashboard_php" class="list-group-item list-group-item-action">Backoffice</a>
                     <a href="?photos_php" class="list-group-item list-group-item-action">Photos</a>
                     <a href="?categories_php" class="list-group-item list-group-item-action">Catagories</a>
                     <a href="?clients_php" class="list-group-item list-group-item-action">Clients</a>

@@ -104,7 +104,7 @@ if (!empty($_POST)) {
         if (empty($message)) {
 
             $checkEmail = checkEmailClient($email);
-            $checkTelephone = checkTelephoneClient($telephone);
+            $checkTelephone = checkTelephoneClient($telephone); 
 
 
             if ($checkEmail || $checkTelephone) {

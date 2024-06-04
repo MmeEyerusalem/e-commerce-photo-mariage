@@ -1,4 +1,4 @@
-<?php
+<!-- <?php -->
 require_once "inc/functions.inc.php";
 $pdo = connexionBdd();
 
@@ -89,7 +89,7 @@ require_once "inc/headerwithout.inc.php";
 
 ?>
 
-
+<!-- 
 
 <section class="mt-5 p-5">
     <form action="" method="post" class="w-50 mx-auto p-3 text-white rounded-5 formV border p-5 col-sm-12 col-md-8">
@@ -163,7 +163,7 @@ require_once "inc/headerwithout.inc.php";
     </form>
   </section>
 
-  <?php
+  <?php -->
     require_once "inc/footer.inc.php";
   ?>
 
@@ -200,7 +200,7 @@ require_once "../inc/header.inc.php";
 ?>
 
 
-
+<!-- 
 
 <section class="mt-5 p-5">
     <form action="" method="post" class="w-50 mx-auto p-3 text-white rounded-5 border p-5 col-sm-12 col-md-8">
@@ -319,9 +319,9 @@ require_once "../inc/header.inc.php";
         }
         ?>
     </section>
-</main>
+</main> -->
 
-
+<!-- 
 <main class="">
     <div><h1>Votre Histoire Capturée par la Lumière</h1></div>
     <section class="container">
@@ -360,9 +360,9 @@ require_once "../inc/header.inc.php";
         }
         ?>
     </section>
-</main>
+</main> -->
 
-
+<!-- 
 
 <main class="">
     <div><h1>Votre Histoire Capturée par la Lumière</h1></div>
@@ -527,7 +527,7 @@ require_once "../inc/header.inc.php";
             </div>
         </div>
     </section>
-</main>
+</main> -->
 
 -------------------code from page authentification-------------------------
 
@@ -563,7 +563,7 @@ if (isset($_GET['id_client_image']) == ':id_client_image') {
 header("location:" . RACINE_SITE . "galerieprive.php");
 }
 
-
+<!-- 
 
 
 <main class="container mt-2 mb-2">
@@ -584,3 +584,85 @@ header("location:" . RACINE_SITE . "galerieprive.php");
         <a href="#" class=" btn btn-primary">Téléchargement</a>
     </div>
 </main>
+ -->
+
+
+// First Code Snippet (Login Script)
+// ... [previous code]
+$stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
+$stmt->execute(['email' => $email]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+if ($user && password_verify($password, $user['password'])) {
+    $_SESSION['user_id'] = $user['id'];
+    // ... [redirection based on role]
+}
+
+// Second Code Snippet (checkClient Function)
+function checkClient(string $email, string $password): mixed {
+    $pdo = connexionBdd();
+    $request = $pdo->prepare("SELECT * FROM user WHERE email = :email");
+    $request->execute([':email' => $email]);
+    $user = $request->fetch();
+    if ($user && password_verify($password, $user['password'])) {
+        return $user;
+    } else {
+        return false;
+    }
+}
+
+// ... [previous code]
+
+// User login process
+if (isset($_POST['login'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Prepare and execute the query
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
+    $stmt->execute(['email' => $email]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // Verify the password
+    if ($user && password_verify($password, $user['password'])) {
+        // Password is correct, create user session
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['role'] = $user['role']; // Store the user's role in the session
+
+        // Redirect based on role
+        if ($user['role'] === 'admin') {
+            header('Location: dashboard.php');
+        } else if ($user['role'] === 'client') {
+            header('Location: profile.php'); // Redirect to the client's profile page
+        }
+        exit;
+    } else {
+        // Authentication failed
+        echo 'Incorrect email or password.';
+    }
+}
+// ...
+
+
+// First Code Snippet (Login Script)
+// ... [previous code]
+$request = $pdo->prepare("SELECT * FROM clients WHERE email = :email");
+$request->execute(['email' => $email]);
+$client = $request->fetch(PDO::FETCH_ASSOC);
+if ($client && password_verify($password, $client['password'])) {
+    $_SESSION['client_id'] = $client['id'];
+    // ... [redirection based on role]
+}
+
+// Second Code Snippet (checkClient Function)
+function checkClient(string $email, string $password): mixed {
+    $pdo = connexionBdd();
+    $request = $pdo->prepare("SELECT * FROM user WHERE email = :email");
+    $request->execute([':email' => $email]);
+    $user = $request->fetch();
+    if ($user && password_verify($password, $user['password'])) {
+        return $user;
+    } else {
+        return false;
+    }
+}
+
