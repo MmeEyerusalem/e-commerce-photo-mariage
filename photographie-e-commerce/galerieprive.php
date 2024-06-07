@@ -1,12 +1,12 @@
 <?php
     require_once "inc/functions.inc.php";
 
-// $pdo = connexionBdd();
-// $sql = "SELECT ci.*, p.photo FROM client_images ci 
-//         JOIN photos p ON ci.photo_id = p.id_photo 
-//         ORDER BY ci.id_client_image";
-// $request = $pdo->prepare($sql);
-// $request->execute();
+$pdo = connexionBdd();
+$sql = "SELECT ci.*, p.photo FROM client_images ci 
+        JOIN photos p ON ci.photo_id = p.id_photo 
+        ORDER BY ci.id_client_image";
+$request = $pdo->prepare($sql);
+$request->execute();
 
 
 
@@ -19,7 +19,7 @@
 //     $client_id = $_SESSION['client_id'];
 
 
-//     // Retrieve client's photos
+    // Retrieve client's photos
 
 //     $pdo = connexionBdd();
 
@@ -56,28 +56,28 @@ require_once "inc/headerwithout.inc.php";
     <h1>Bienvenue dans votre galerie privée</h1>
 
     <?php
-    if (isset($_SESSION['client_id'])) {
+    // if (isset($_SESSION['client_id'])) {
 
-        $client_id = $_SESSION['client_id'];
-        $pdo = connexionBdd();
+    //     $client_id = $_SESSION['client_id'];
+    //     $pdo = connexionBdd();
     
-        $sql = "SELECT ci.*, p.photo 
+    //     $sql = "SELECT ci.*, p.photo 
     
-            FROM client_images ci 
+    //         FROM client_images ci 
     
-            JOIN photos p ON ci.photo_id = p.id_photo 
+    //         JOIN photos p ON ci.photo_id = p.id_photo 
     
-            WHERE ci.id_client = :id_client 
+    //         WHERE ci.id_client = :id_client 
     
-            ORDER BY ci.id_client_image";
+    //         ORDER BY ci.id_client_image";
     
-    $request = $pdo->prepare($sql);
+    // $request = $pdo->prepare($sql);
     
-    $request->execute(array(
+    // $request->execute(array(
     
-        ':id_client' => $client_id,
+    //     ':id_client' => $client_id,
     
-    ));
+    // ));
 
 
 
@@ -98,9 +98,9 @@ require_once "inc/headerwithout.inc.php";
         ?>
     </article>
     <?php
-    } else {
-        echo "Vous n'avez pas accés à cette galerie.";
-    }
+    // } else {
+    //     echo "Vous n'avez pas accés à cette galerie.";
+    // }
     ?>
     <div>
         <a href="#" class="btn btn-primary">Téléchargement</a>

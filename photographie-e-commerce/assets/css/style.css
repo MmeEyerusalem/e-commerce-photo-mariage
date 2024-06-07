@@ -448,3 +448,7 @@ h1{
 .mainPerso .occImg8{
     width: 100%;
 }
+/* -------------------------------------Condidtion général----------------------------------------------- */
+.paragraphCondition{
+    text-align: justify;
+}

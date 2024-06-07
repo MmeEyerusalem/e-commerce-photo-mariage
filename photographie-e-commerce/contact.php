@@ -5,8 +5,8 @@ require_once "inc/functions.inc.php";
 if(isset($_POST['email'])) {
  
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "votre@email";
-    $email_subject = "Le sujet de votre email";
+    $email_to = "eyerusalem.gemeda@colombbus.org";
+    $email_subject = "Votre commentaire";
  
     function died($error) {
         // your error code can go here
@@ -91,59 +91,59 @@ require_once "inc/headerwithout.inc.php";
 ?>
 <section class="container contact-section rounded-3 ">
 
-  <form class="text-dark mt-5" name="contact_form" method="post" action="">
+  <form class="text-dark   mt-5" name="contact_form" method="post" action="">
     <table width="500">
         <tr>
-        <td class="p-3">
-          <label for="nom">Nom</label>
-        </td>
-        <td class="p-3">
-          <input  type="text" name="nom" maxlength="50" size="30" value="<?php if (isset($_POST['nom'])) echo htmlspecialchars($_POST['nom']);?>">
-        </td>
+            <td class="p-3">
+              <label for="nom">Nom</label>
+            </td>
+            <td class="p-3">
+                <input  type="text" name="nom" maxlength="50" size="30" value="<?php if (isset($_POST['nom'])) echo htmlspecialchars($_POST['nom']);?>">
+            </td>
         </tr>
         <tr>
-        <td class="p-3">
-          <label for="prenom">Prénom</label>
-        </td>
-        <td class="p-3">
-          <input  type="text" name="prenom" maxlength="50" size="30" value="<?php if(isset($_POST['prenom'])) echo htmlspecialchars($_POST['prenom']);?>">
-        </td>
+            <td class="p-3">
+                <label for="prenom">Prénom</label>
+              </td>
+            <td class="p-3">
+                <input  type="text" name="prenom" maxlength="50" size="30" value="<?php if(isset($_POST['prenom'])) echo htmlspecialchars($_POST['prenom']);?>">
+            </td>
         </tr>
         <tr>
-        <td class="p-3">
-          <label for="email">Email Addresse</label>
-        </td>
-        <td class="p-3">
-          <input  type="text" name="email" maxlength="80" size="30" value="<?php if (isset($_POST['email'])) echo htmlspecialchars($_POST['email']);?>">
-        </td>
+            <td class="p-3">
+              <label for="email">Email Addresse</label>
+            </td>
+            <td class="p-3">
+              <input  type="text" name="email" maxlength="80" size="30" value="<?php if (isset($_POST['email'])) echo htmlspecialchars($_POST['email']);?>">
+            </td>
         </tr>
         <tr>
-        <td class="p-3">
-          <label for="telephone">Téléphone</label>
-        </td>
-        <td class="p-3">
-          <input  type="text" name="telephone" maxlength="30" size="30" value="<?php if (isset($_POST['telephone'])) echo htmlspecialchars($_POST['telephone']);?>">
-        </td>
+          <td class="p-3">
+            <label for="telephone">Téléphone</label>
+          </td>
+          <td class="p-3">
+            <input  type="text" name="telephone" maxlength="30" size="30" value="<?php if (isset($_POST['telephone'])) echo htmlspecialchars($_POST['telephone']);?>">
+          </td>
         </tr>
         <tr>
-        <td class="p-3">
-          <label for="commentaire">Votre message</label>
-        </td>
-        <td class="p-3">
-          <textarea  name="commentaire" cols="28" rows="10"><?php if (isset($_POST['commentaire'])) echo htmlspecialchars($_POST['commentaire']);?></textarea>
-        </td>
+          <td class="p-3">
+              <label for="commentaire">Votre message</label>
+          </td>
+          <td class="p-3">
+              <textarea  name="commentaire" cols="28" rows="10"><?php if (isset($_POST['commentaire'])) echo htmlspecialchars($_POST['commentaire']);?></textarea>
+          </td>
         </tr>
         <tr>
-        <td colspan="2" style="text-align:center">
-        <button type="submit" value=" Envoyer " class="btn btn-outline-dark rounded-start ms-4 bouton mb-4">Envoyer</button>
-        </td>
+          <td colspan="2" style="text-align:center">
+              <button type="submit" value=" Envoyer " class="btn btn-outline-dark rounded-start ms-4 bouton mb-4">Envoyer</button>
+          </td>
         </tr>
     </table>
   </form>
 
     <div class="px-5">
         <img class="rounded-pill mt-5" src="assets/img/wedding-22.jpg" alt="" width="50%" hieght="100%">
-        <h3 class="p-3">A vous écoute</h3>
+        <h3 class="p-3">À votre écoute. </h3>
         <h5> Lorem ipsum dolor sit amet consectetur adipisicing elit. In magnam accusantium unde molestias excepturi, </h5>
     </div>
 

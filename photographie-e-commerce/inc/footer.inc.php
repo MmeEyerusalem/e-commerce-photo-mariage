@@ -4,10 +4,10 @@
 <footer>
         <nav class="nav navFoot pt-5  pb-3">
             <div class="col-6 border-end footer1">
-                <a class="nav-link text-center" href="#">  Contact</a>
+                <a class="nav-link text-center" href="<?=RACINE_SITE ?>contact.php">  Contact</a>
                 <i class="bi bi-telephone teleIcon text-center">  &#8594; 0606060606</i>
-                <a class="nav-link text-center" href="#">Condition general</a>
-                <a class="nav-link text-center" href="#">Droit d'auteur</a>
+                <a class="nav-link text-center" href="<?=RACINE_SITE ?>conditiongeneral.php">Condition general</a>
+                <a class="nav-link text-center" href="<?=RACINE_SITE ?>conditiongeneral.php">Droit d'auteur</a>
                 <p class="pt-3 text-center">&copy; EYE photographie 2024</p>
             </div>
 

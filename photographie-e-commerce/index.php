@@ -115,7 +115,7 @@ require_once "inc/header.inc.php";
              
             <div class="col-12 col-md-6 mx-auto mt-5 mt-md-0 text-center text-md-left textPromo">
                 <!-- <h3 class="fs-4">Plus les details? Ou un devie? Contactez nous! </h3> -->
-                <h3 class="fs-4">Les promotions du mois! </h3>
+                <h3 class="pt-4 fs-4">Les promotions du mois! </h3>
                 <div class="text-center">
                     <button type="button" class="btn btn-outline-warning fs-5 fw-bold mt-3">Click ici &#9754;</button>
                 </div>

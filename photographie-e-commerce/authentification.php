@@ -1,44 +1,87 @@
 <?php
 require_once "inc/functions.inc.php";
-ob_start();
+// ob_start();
 
 
 $message = "";
 
-// login.php
 
-if (isset($_POST['email']) && isset($_POST['password'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+if (!empty($_POST)) {
+  // debug($_POST);
 
-    // Connectez-vous à la base de données
-    $pdo = connexionBdd();
+  $verif = true;
 
-    // Préparez le SQL
-    $stmt = $pdo->prepare("SELECT * FROM clients WHERE email = :email");
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
+  foreach($_POST as $value) {
 
-    // Vérifier si l'utilisateur existe
-    if ($stmt->rowCount() > 0) {
-        $user = $stmt->fetch();
-        if (password_verify($password, $user['password'])) {
-            // stockez l'ID utilisateur dans la session
-            $_SESSION['user_id'] = $user['id_client'];
-            header('Location: galerieprivate.php');
-            exit;
-        } else {
-            $message = 'Invalid password';
+
+    if (empty($value)) {
+
+      $verif = false;
+    }
+
+  }
+
+  if (!$verif) {
+    debug($_POST);
+
+
+    $message = "Veuillez renseigner tout les champs";
+
+  } else {
+    
+    debug($_POST);
+
+  
+    $email = isset($_POST['email']) ? $_POST['email'] : null;
+    $password = isset($_POST['password']) ? $_POST['password'] : null;
+
+    $user = checkEmailClient($email);
+        if ($user) {
+
+            if (password_verify($password, $user['password'])){
+                $_SESSION['user'] = $user;
+
+                header("location:" .RACINE_SITE. "profil.php");
+            }else {
+            $message = "Les identifiants sont incorrectes";
         }
-    } else {
-        $message = 'User not found';
+    }
+
     }
 }
+// session_destroy();
+
+
+// if (isset($_POST['email']) && isset($_POST['password'])) {
+//     $email = $_POST['email'];
+//     $password = $_POST['password'];
+
+//     $pdo = connexionBdd();
+//     // Préparez le SQL
+//     $stmt = $pdo->prepare("SELECT * FROM clients WHERE  email = :email");
+//     $stmt->bindParam( ':email', $email );
+//     $stmt->execute();
+
+//     // Vérifier si l'utilisateur existe
+//     if ($stmt->rowCount() > 0) {
+//         $user = $stmt->fetch();
+//         if (password_verify($password, $user['password'])) {
+//             // stockez l'id utilisateur dans la session
+//             $_SESSION['user_id'] = $user['id_client'];
+//             header('Location: profil.php');
+//             exit;
+//         } else {
+//             $message = 'Invalid password';
+//         }
+//     } else {
+//         $message = 'User not found';
+//     }
+// }
 
 $title = "authentification";
 
 require_once "inc/headerwithout.inc.php";
-ob_end_flush();
+// ob_end_flush();
 ?>
 
 

@@ -115,7 +115,7 @@ function createTableCategories()
 // createTableCategories();
 
 
-  ////////////////// Fonction pour vérifier si le client est existe dans la BDD ///////////////////////////////
+  //////////////// Fonction pour vérifier si le client est existe dans la BDD ///////////////////////////////
 
 //   function checkClient(string $email, string $password) :mixed 
 //   {
@@ -204,9 +204,19 @@ function updatePhoto(int $id, int $galerie_id,  string $photo, string $photo_nam
 
 function deletePhoto(int $id):void {
     $pdo = connexionBdd();
-    $sql = "DELETE FROM photos WJERE id_photo = :id";
+    $sql = "DELETE FROM photos WHERE id_photo = :id";
     $request = $pdo->prepare($sql);
     $request->execute([':id' => $id]);
 }
+
+
+function roleAdmin() {
+    if (connexionBdd() && $_SESSION['user']['role'] == 'ROLE_ADMIN') { // je vérifie que l'utilisateur est connecté et que son statut correspond à 1 dans la BDD
+        return true; // si c'est le cas, il est administrateur
+    }else {
+        return false; // sinon, c'est un utilisateur lambda ou la personne n'est pas connectée.
+    }
+}
+
 
 ?>

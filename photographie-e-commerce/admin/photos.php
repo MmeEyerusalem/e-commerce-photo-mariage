@@ -34,7 +34,7 @@ if (isset($_POST['add_photo'])) {
 
      // Add title and date upload
      $photoname = $_POST['ajouter'];
-     $uploadedate = date("Y-m-d H:i:s"); // current date and time
+    //  $uploadedate = date("Y-m-d H:i:s"); // current date and time
      // Move the uploaded file to the target directory.
      if (move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)) {
         // Insert data into the photos table
@@ -56,11 +56,11 @@ require_once "../inc/headerwithout.inc.php";
 
 <form action="" method="post" enctype="multipart/form-data" class="w-50 mx-auto p-4 mb-4 text-white">
     <?php debug($_POST);  ?>
-    <!-- <div class="m-3 p-2 border border-light">
+    <div class="m-3 p-2 border border-light">
     <label for="photo">Choisissez une photo</label>
     <input type="file" name="photo" id="photo" value="" class="border border-light ">
     <br>
-    </div> -->
+    </div>
     <div class="m-3 p-2 border border-light">
     <label for="titre1">Titre1 mettez 16 fois le trait de soulignement sur le clavier.</label>
     <br>
